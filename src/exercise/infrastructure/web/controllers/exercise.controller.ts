@@ -1,5 +1,5 @@
 import { Request, Response } from "express";
-import { ExerciseUseCases } from "../../../application/use_cases/ExerciseUseCases";
+import { ExerciseUseCases } from "../../../application/use_cases/ExerciseUsesCases";
 import {
   exerciseValidator,
   idExerciseValidator,

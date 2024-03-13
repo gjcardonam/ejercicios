@@ -1,0 +1,19 @@
+# Archivos y carpetas de desarrollo
+src/
+*.ts
+*.json
+!tsconfig.json
+*.md
+.gitignore
+.vercelignore
+Dockerfile
+*.config.js
+*.yml
+
+# Archivos de configuración y documentación
+README.md
+LICENSE
+
+# Directorios específicos del proyecto (ajusta según sea necesario)
+tests/
+scripts/

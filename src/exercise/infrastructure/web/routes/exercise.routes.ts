@@ -1,6 +1,6 @@
 import { Router } from 'express';
 import { ExerciseController } from '../controllers/exercise.controller';
-import { ExerciseUseCases } from '../../../application/use_cases/ExerciseUseCases';
+import { ExerciseUseCases } from '../../../application/use_cases/ExerciseUsesCases';
 import { MongoRepository } from '../../db/repositories/mongo.repository'
 import { MockRepository } from '../../db/repositories/mock.repository'
 
