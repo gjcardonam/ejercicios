@@ -20,8 +20,8 @@ export class MongoRepository implements ExerciseRepository {
         return updatedExercise as ExerciseEntity | null;
     }
     async deleteExercise(id: string): Promise<boolean> {
-        await ExerciseModel.findByIdAndDelete(id);
-        return true;
+        const deletedExercise = await ExerciseModel.findByIdAndDelete(id);
+        return deletedExercise ? true : false;
     }
     async filterExercisesByMuscleGroup(muscleGroup: string[]): Promise<ExerciseEntity[] | null> {
         const exercises = await ExerciseModel.find({ muscleGroup: { $in: muscleGroup } });
@@ -31,5 +31,10 @@ export class MongoRepository implements ExerciseRepository {
     async filterExercisesByName(name: string): Promise<ExerciseEntity[] | null> {
         const exercises = await ExerciseModel.find({ name: { $regex: name, $options: 'i' } });
         return exercises.map(exercise => exercise.toObject());
+    }
+
+    async createManyExercises(exercises: ExerciseEntity[]): Promise<ExerciseEntity[]> {
+        const exercisesCreated = await ExerciseModel.insertMany(exercises);
+        return exercisesCreated.map(exercise => exercise.toObject());
     }
 }

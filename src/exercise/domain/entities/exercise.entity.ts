@@ -10,6 +10,7 @@ export class ExerciseEntity {
   muscleGroup: string[];
   requiredEquipment: string[];
   isRecommended: boolean;
+  duration: number;
   images: Image[];
   videos: Video[];
   recommendations: Recommendation[];
@@ -21,6 +22,7 @@ export class ExerciseEntity {
     this.muscleGroup = data.muscleGroup!;
     this.requiredEquipment = data.requiredEquipment!;
     this.isRecommended = data.isRecommended !== undefined ? data.isRecommended : false;
+    this.duration = data.duration || 0;
     this.images = data.images || []; 
     this.videos = data.videos || []; 
     this.recommendations = data.recommendations || []; 

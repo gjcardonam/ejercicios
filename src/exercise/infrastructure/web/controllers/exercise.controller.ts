@@ -131,6 +131,21 @@ export class ExerciseController {
       }
     }
   };
+
+  public createManyExercises = async (req: Request, res: Response) => {
+    try {
+      const exercises = req.body;
+      const exercisesCreated = await this.exerciseUseCases.createManyExercises(exercises);
+      res.status(201).json(exercisesCreated);
+    } catch (error: unknown) {
+      if (error instanceof Error) {
+        res.status(400).json({ message: error.message });
+      } else {
+        res.status(500).json({ message: "An unknown error occurred." });
+      }
+    }
+  }
+
 }
 
 

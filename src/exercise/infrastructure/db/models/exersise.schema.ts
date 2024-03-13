@@ -6,13 +6,13 @@ const ImageSchema = new Schema({
   });
 
 const VideoSchema = new Schema({
-    difficultyLevel: { type: String, required: true, enum: ['Bajo', 'Medio', 'Alto']},
+    difficultyLevel: { type: String, required: true, enum: ['Principiante', 'Intermedio', 'Avanzado']},
     url: { type: String, required: true },
     description: { type: String, required: true }
   });
 
 const RecommendationSchema = new Schema({
-    difficultyLevel: { type: String, required: true, enum: ['Bajo', 'Medio', 'Alto']},
+    difficultyLevel: { type: String, required: true, enum: ['Principiante', 'Intermedio', 'Avanzado']},
     sets: { type: Number, required: true },
     repetitions: { type: Number, required: true },
     weight: { type: Number, required: true }
@@ -30,6 +30,7 @@ const ExerciseSchema = new Schema(
         muscleGroup: { type: [{ type: String, enum: validMuscleGroups }], required: true },
         requiredEquipment: { type: [String], required: true },
         isRecommended: { type: Boolean, required: true },
+        duration: { type: Number, required: true },
         images: { type: [ImageSchema], required: true },
         videos: { type: [VideoSchema], required: true },
         recommendations: { type: [RecommendationSchema], required: true },

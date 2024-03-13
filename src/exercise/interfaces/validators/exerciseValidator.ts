@@ -21,6 +21,7 @@ const exerciseValidator = Joi.object({
     .required(),
   requiredEquipment: Joi.array().items(Joi.string()).required(),
   isRecommended: Joi.boolean().required(),
+  duration: Joi.number().required(),
   images: Joi.array()
     .items(
       Joi.object({
@@ -32,7 +33,7 @@ const exerciseValidator = Joi.object({
   videos: Joi.array()
     .items(
       Joi.object({
-        difficultyLevel: Joi.string().valid("Bajo", "Medio", "Alto").required(),
+        difficultyLevel: Joi.string().valid("Principiante", "Intermedio", "Avanzado").required(),
         url: Joi.string().required(),
         description: Joi.string().required(),
       })
@@ -41,7 +42,7 @@ const exerciseValidator = Joi.object({
   recommendations: Joi.array()
     .items(
       Joi.object({
-        difficultyLevel: Joi.string().valid("Bajo", "Medio", "Alto").required(),
+        difficultyLevel: Joi.string().valid("Principiante", "Intermedio", "Avanzado").required(),
         sets: Joi.number().required(),
         repetitions: Joi.number().required(),
         weight: Joi.number().required(),

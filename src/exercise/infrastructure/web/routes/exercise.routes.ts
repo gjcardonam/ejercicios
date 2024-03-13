@@ -16,6 +16,7 @@ router.get('/exercises/', exerciseController.listExercises);
 router.post('/exercises/', exerciseController.createExercise);
 router.put('/exercises/:uuid', exerciseController.updateExercise);
 router.delete('/exercises/:uuid', exerciseController.deleteExercise);
+router.post('/exercises/createMany', exerciseController.createManyExercises);
 
 
 export default router;

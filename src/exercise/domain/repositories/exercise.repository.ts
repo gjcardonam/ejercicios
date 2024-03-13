@@ -8,4 +8,5 @@ export interface ExerciseRepository {
     deleteExercise(uuid: string): Promise<boolean>;
     filterExercisesByMuscleGroup(muscleGroup: string[]): Promise<ExerciseEntity[] | null>;
     filterExercisesByName(name: string): Promise<ExerciseEntity[] | null>;
+    createManyExercises(exercises: ExerciseEntity[]): Promise<ExerciseEntity[] | null>;
     }

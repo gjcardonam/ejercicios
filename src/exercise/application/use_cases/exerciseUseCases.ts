@@ -40,4 +40,10 @@ export class ExerciseUseCases {
     const exercises = await this.exerciseRepository.filterExercisesByName(name)
     return exercises
   }
+
+  public  createManyExercises = async (exercisesIn: Partial<ExerciseEntity>[]) => {
+    const exercises = exercisesIn.map(exercise => new ExerciseEntity(exercise))
+    const exercisesCreated = await this.exerciseRepository.createManyExercises(exercises)
+    return exercisesCreated
+  }
 }
