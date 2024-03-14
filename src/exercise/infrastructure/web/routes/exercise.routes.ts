@@ -17,6 +17,7 @@ router.post('/exercises/', exerciseController.createExercise);
 router.put('/exercises/:uuid', exerciseController.updateExercise);
 router.delete('/exercises/:uuid', exerciseController.deleteExercise);
 router.post('/exercises/createMany', exerciseController.createManyExercises);
+router.get('/', (req, res) => { res.send('Hello World!') });
 
 
 export default router;
