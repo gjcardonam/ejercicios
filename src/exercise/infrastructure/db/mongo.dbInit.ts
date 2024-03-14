@@ -11,7 +11,7 @@ const DB_URI = `mongodb+srv://${DB_USER}:${DB_PASSWORD}@${DB_HOST}/${DB_NAME}?re
 const dbInit = async () => {
     try {
         await connect(DB_URI);
-        console.log('MongoDB connected');
+        console.log('MongoDB connected successfully!');
     } catch (error) {
         console.error('Error connecting to MongoDB: ', error);
     }
