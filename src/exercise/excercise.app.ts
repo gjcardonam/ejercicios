@@ -1,7 +1,7 @@
 import "dotenv/config";
 import express from "express";
 import exerciseRoute from "./infrastructure/web/routes/exercise.routes";
-import dbInit from "./infrastructure/db/mongo.dbInit";
+import { dbInit } from "./infrastructure/db/mongo.dbInit";
 import cors from 'cors';
 
 const app = express();
