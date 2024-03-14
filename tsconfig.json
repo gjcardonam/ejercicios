@@ -3,13 +3,11 @@
     "target": "es6", // Versión de ECMAScript objetivo.
     "module": "commonjs", // Sistema de módulos, Node.js utiliza CommonJS.
     "lib": ["es6"], // Bibliotecas de tiempo de ejecución que el proyecto usará.
-    "outDir": "./dist", // Directorio de salida para los archivos compilados.
-    "rootDir": "./src", // Directorio de archivos fuente.
     "strict": true, // Activa una amplia gama de verificaciones de tipo estrictas.
     "esModuleInterop": true, // Permite la interoperabilidad de módulos ES6 con CommonJS.
     "skipLibCheck": true, // Omite la comprobación de tipos en archivos de declaración.
     "forceConsistentCasingInFileNames": true // Asegura que el caso de las referencias a archivos sea consistente.
   },
-  "include": ["src/**/*"], // Archivos a incluir en la compilación.
+  "include": ["./api/*.ts", "src/**/*"], // Archivos a incluir en la compilación.
   "exclude": ["node_modules", "dist"] // Archivos o directorios a excluir.
 }

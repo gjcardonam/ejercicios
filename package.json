@@ -4,10 +4,10 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "node dist/excercise.app.js",
-    "dev": "nodemon ./src/exercise/excercise.app.ts",
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "tsc"
+    "start": "ts-node src/excercise.app.ts",
+    "dev": "nodemon src/excercise.app.ts",
+    "build": "tsc",
+    "vercel-build": "echo Build for Vercel"
   },
   "author": "",
   "license": "ISC",
